@@ -9,3 +9,11 @@
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 2rem;
+  height: 100vh;
+  color: #222;
+  background-color: #eabfb9;
+}
