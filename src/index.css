@@ -80,3 +80,8 @@ input:focus {
 .day span {
   font-size: 5.2rem;
 }
+
+.day.important {
+  background-color: #ecc5c0;
+  outline: 2px solid #222;
+}
