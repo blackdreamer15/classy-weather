@@ -56,7 +56,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div c lassName="app">
+      <div className="app">
         <h1>Classy weather</h1>
 
         <div>
@@ -68,7 +68,9 @@ class App extends React.Component {
           />
         </div>
 
-        <button onClick={this.fetchWeather}>Get weather</button>
+        <button onClick={this.fetchWeather}>
+          Get weather
+        </button>
 
         {this.state.isLoading && (
           <p className="loader">Loading...</p>
