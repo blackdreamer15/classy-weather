@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { location: "Accra" };
+    this.state = { location: "Accra", isLoading: false };
 
     this.fetchWeather = this.fetchWeather.bind(this);
   }
@@ -13,6 +13,7 @@ class App extends React.Component {
 
   async fetchWeather() {
     try {
+      this.setState({ isLoading: false });
       // 1) Getting location (geocoding)
       const geoRes = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${this.state.location}`
@@ -32,8 +33,12 @@ class App extends React.Component {
       );
       const weatherData = await weatherRes.json();
       console.log(weatherData.daily);
-    } catch (err) {
+    }
+    catch (err) {
       console.err(err);
+    }
+    finally {
+      this.setState({ isLoading: true });
     }
   }
 
