@@ -18,7 +18,13 @@ function getWeatherIcon(wmoCode) {
   return icons.get(arr);
 }
 
-
+function convertToFlag(countryCode) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -32,15 +38,6 @@ class App extends React.Component {
     };
 
     this.fetchWeather = this.fetchWeather.bind(this);
-  }
-
-
-  convertToFlag(countryCode) {
-    const codePoints = countryCode
-      .toUpperCase()
-      .split("")
-      .map((char) => 127397 + char.charCodeAt());
-    return String.fromCodePoint(...codePoints);
   }
 
   async fetchWeather() {
