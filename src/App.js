@@ -109,12 +109,22 @@ class Weather extends React.Component {
       <div>
         <h2>Weather {this.props.location}</h2>
 
-        <ul>{
+        <ul className="weather">{
           dates.map((date) => (
             <Day date={date} />
           ))
         }</ul>
       </div>
+    );
+  }
+}
+
+class Day extends React.Component {
+  render() {
+    return (
+      <li className="day">
+
+      </li>
     );
   }
 }
