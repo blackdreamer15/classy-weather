@@ -57,6 +57,10 @@ class App extends React.Component {
         </div>
 
         <button onClick={this.fetchWeather}>Get weather</button>
+
+        {this.state.isLoading && (
+          <p className="loader">Loading...</p>
+        )}
       </div>
     );
   }
