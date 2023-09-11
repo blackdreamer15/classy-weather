@@ -83,6 +83,8 @@ class App extends React.Component {
         {this.state.isLoading && (
           <p className="loader">Loading...</p>
         )}
+
+        {this.state.weather.weathercode && <Weather />}
       </div>
     );
   }
