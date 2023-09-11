@@ -110,8 +110,13 @@ class Weather extends React.Component {
         <h2>Weather {this.props.location}</h2>
 
         <ul className="weather">{
-          dates.map((date) => (
-            <Day date={date} />
+          dates.map((date, i) => (
+            <Day
+              min={minTemp[i]}
+              max={maxTemp[i]}
+              date={date}
+              code={codes[i]}
+            />
           ))
         }</ul>
       </div>
