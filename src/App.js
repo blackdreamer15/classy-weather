@@ -6,6 +6,8 @@ class App extends React.Component {
     super(props);
 
     this.state = { location: "Accra" };
+
+    this.fetchWeather = this.fetchWeather.bind(this);
   }
 
 
