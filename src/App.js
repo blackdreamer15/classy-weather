@@ -26,6 +26,13 @@ function convertToFlag(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
+function formatDay(dateStr) {
+  return new Intl.DateTimeFormat("en", {
+    weekday: "short",
+  }).format(new Date(dateStr));
+}
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
