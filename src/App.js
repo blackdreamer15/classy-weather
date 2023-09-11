@@ -18,7 +18,7 @@ class App extends React.Component {
             type="text"
             placeholder="Search from location..."
             value={this.state.location}
-            onChange={e => this.setState.location(e.target.value)}
+            onChange={e => this.setState.location({ location: e.target.value })}
           />
         </div>
 
