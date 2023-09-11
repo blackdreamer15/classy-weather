@@ -8,6 +8,11 @@ class App extends React.Component {
     this.state = { location: "Accra" };
   }
 
+
+  fetchWeather() {
+
+  }
+
   render() {
     return (
       <div className="app">
@@ -22,7 +27,7 @@ class App extends React.Component {
           />
         </div>
 
-        <button>Get weather</button>
+        <button onClick={this.fetchWeather}>Get weather</button>
       </div>
     );
   }
