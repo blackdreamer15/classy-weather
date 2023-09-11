@@ -16,6 +16,14 @@ class App extends React.Component {
   }
 
 
+  convertToFlag(countryCode) {
+    const codePoints = countryCode
+      .toUpperCase()
+      .split("")
+      .map((char) => 127397 + char.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+  }
+
   async fetchWeather() {
     try {
       this.setState({ isLoading: true });
