@@ -126,6 +126,9 @@ class Weather extends React.Component {
 
 class Day extends React.Component {
   render() {
+
+    const { min, max, date, code } = this.props;
+
     return (
       <li className="day">
 
