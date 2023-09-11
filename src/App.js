@@ -84,11 +84,39 @@ class App extends React.Component {
           <p className="loader">Loading...</p>
         )}
 
-        {this.state.weather.weathercode && <Weather />}
+        {this.state.weather.weathercode && (
+          <Weather
+            weather={this.state.weather}
+            location={this.state.displayLocation}
+          />
+        )}
       </div>
     );
   }
 }
 
+
+class Weather extends React.Component {
+  render() {
+    const {
+      temperature_2m_max: maxTemp,
+      temperature_2m_min: minTemp,
+      time: dates,
+      weathercode: codes
+    } = this.props.weather;
+
+    return (
+      <div>
+        <h2>Weather {this.props.location}</h2>
+
+        <ul>{
+          dates.map((date) => (
+            <Day date={date} />
+          ))
+        }</ul>
+      </div>
+    );
+  }
+}
 
 export default App;
