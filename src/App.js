@@ -68,7 +68,7 @@ class App extends React.Component {
       } =
         geoData.results.at(0);
 
-      this.setState({ displayLocation: `${name} ${this.convertToFlag(country_code)}` });
+      this.setState({ displayLocation: `${name} ${convertToFlag(country_code)}` });
 
       // 2) Getting actual weather
       const weatherRes = await fetch(
@@ -155,7 +155,7 @@ class Day extends React.Component {
     return (
       <li className="day">
         <span>{code}</span>
-        <p>{date}</p>
+        <p>{formatDay(date)}</p>
         <p>
           {Math.floor(min)}&deg; &mdash; {Math.ceil(max)}&deg;
         </p>
