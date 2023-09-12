@@ -157,7 +157,7 @@ class Day extends React.Component {
         <span>{getWeatherIcon(code)}</span>
         <p>{formatDay(date)}</p>
         <p>
-          {Math.floor(min)}&deg; &mdash; {Math.ceil(max)}&deg;
+          {Math.floor(min)}&deg; &mdash; <strong>{Math.ceil(max)}&deg;</strong>
         </p>
       </li>
     );
