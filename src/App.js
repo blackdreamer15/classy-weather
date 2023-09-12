@@ -38,7 +38,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      location: "Accra",
+      location: "",
       isLoading: false,
       displayLocation: "",
       weather: {},
@@ -48,6 +48,8 @@ class App extends React.Component {
   }
 
   async fetchWeather() {
+    if (this.state.location.length < 2) return this.setState({ weather: {} });
+
     try {
       this.setState({ isLoading: true });
       // 1) Getting location (geocoding)
@@ -83,6 +85,20 @@ class App extends React.Component {
     finally {
       this.setState({ isLoading: false });
     }
+  }
+
+
+  componentDidMount() {
+    this.setState({ location: localStorage.getItem("location") || "" });
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.location !== prevState.location) {
+      this.fetchWeather();
+    }
+
+    localStorage.setItem("location", this.state.location);
   }
 
   render() {
