@@ -161,6 +161,7 @@ class Weather extends React.Component {
         <ul className="weather">{
           dates.map((date, i) => (
             <Day
+	      key={date}
               min={minTemp[i]}
               max={maxTemp[i]}
               date={date}
